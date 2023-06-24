@@ -145,14 +145,17 @@
       element: skilsContent,
       offset: '80%',
       handler: function(direction) {
-        let progress = select('.progress .progress-bar', true);
+        let progress1 = select('.progress .progress-bar', true);
+        progress1.forEach((el) => {
+          el.style.width = el.getAttribute('aria-valuenow') + '%'
+        });
+        let progress = select('.progress .progress-bar1', true);
         progress.forEach((el) => {
           el.style.width = el.getAttribute('aria-valuenow') + '%'
         });
       }
     })
   }
-
   /**
    * Porfolio isotope and filter
    */
